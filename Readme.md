@@ -1,4 +1,4 @@
-# sogo-darktheme
+# sogo-dark-theme
 Dark theme for SOGo web mail client used in mailcow dockerized
 
 Created by mailcow official documentation - https://docs.mailcow.email/manual-guides/SOGo/u_e-sogo/#apply-custom-sogo-theme
@@ -7,11 +7,11 @@ Created by mailcow official documentation - https://docs.mailcow.email/manual-gu
 Download theme to /opt/mailcow-dockerized/data/conf/sogo/
 ``` bash
 cd /opt/mailcow-dockerized/data/conf/sogo/
-wget https://raw.githubusercontent.com/NlightN22/sogo-dark-red/main/custom-theme.css
+wget https://github.com/thechevycarguy/Sogo-Dark-Theme/blob/main/custom-theme.css
 ```
 Update or create /opt/mailcow-dockerized/docker-compose.override.yml:
 ```yml
-version: '2.1'
+version: '1.1'
 
 services:
   sogo-mailcow:
