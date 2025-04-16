@@ -10,7 +10,7 @@ cd /opt/mailcow-dockerized/data/conf/sogo/
 wget https://raw.githubusercontent.com/NlightN22/sogo-dark-red/main/custom-theme.css
 Update or create /opt/mailcow-dockerized/docker-compose.override.yml:
 
-version: '2.1'
+version: '1.0'
 
 services:
   sogo-mailcow:
