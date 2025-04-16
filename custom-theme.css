@@ -1,0 +1,165 @@
+/* SOGo Dark Theme */
+:root {
+    --bg-primary: #1e1e1e;
+    --bg-secondary: #2d2d2d;
+    --bg-tertiary: #3a3a3a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --accent-color: #4a8cff;
+    --border-color: #444;
+    --hover-bg: #333;
+    --active-bg: #3a3a3a;
+    --unread-bg: #2a4365;
+    --error-color: #ff6b6b;
+    --success-color: #6bff6b;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Header */
+#header {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+#header a, #header span {
+    color: var(--text-primary);
+}
+
+/* Navigation */
+#navigation {
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+}
+
+#navigation a {
+    color: var(--text-primary);
+}
+
+#navigation a:hover {
+    background-color: var(--hover-bg);
+}
+
+#navigation .selected a {
+    background-color: var(--active-bg);
+    color: var(--accent-color);
+}
+
+/* Content area */
+#content {
+    background-color: var(--bg-primary);
+}
+
+/* Tables */
+table {
+    border-color: var(--border-color);
+}
+
+table th {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+table td {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+table tr:hover td {
+    background-color: var(--hover-bg);
+}
+
+/* Buttons */
+button, .button, input[type="submit"] {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+button:hover, .button:hover, input[type="submit"]:hover {
+    background-color: var(--hover-bg);
+}
+
+button.primary, .button.primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Forms */
+input, textarea, select {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+/* Calendar */
+.fc-daygrid-day {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+.fc-daygrid-day.fc-day-today {
+    background-color: var(--bg-tertiary);
+}
+
+/* Mail */
+.unread {
+    background-color: var(--unread-bg);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Miscellaneous */
+hr {
+    border-color: var(--border-color);
+}
+
+a {
+    color: var(--accent-color);
+}
+
+a:hover {
+    color: lighten(var(--accent-color), 10%);
+}
+
+.error {
+    color: var(--error-color);
+}
+
+.success {
+    color: var(--success-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #navigation {
+        background-color: var(--bg-primary);
+    }
+}
