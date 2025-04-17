@@ -225,3 +225,16 @@ main.view.md-default-theme.md-background.md-hue-1.md-bg {
   --ck-color-base-background: #333;
   --ck-color-toolbar-background: #2c2c2c;
 }
+
+
+md-dialog.md-default-theme, md-dialog {
+    background-color: rgb(255, 255, 255) !important;
+    border-radius: 4px !important;
+    color: rgb(224, 224, 224) !important;
+}
+
+
+:root {
+  --ck-color-base-background: #333 !important;
+  --ck-color-base-text: rgb(224, 224, 224) !important;
+}
