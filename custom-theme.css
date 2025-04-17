@@ -1,241 +1,195 @@
-/* SOGo Office 365 Dark Theme */
+/*!
+ * SOGo - Outlook Blue Theme
+ * Replaces dark red with Outlook blue and ensures compose text is black
+ */
+
 :root {
-    --bg-primary: #1d1d1d;
-    --bg-secondary: #252525;
-    --bg-tertiary: #2d2d2d;
-    --text-primary: #f3f3f3;
-    --text-secondary: #d6d6d6;
-    --accent-color: #4F6BED;
-    --border-color: #3d3d3d;
-    --hover-bg: #383838;
-    --active-bg: #323232;
-    --unread-bg: #2a3f66;
-    --error-color: #F1707B;
-    --success-color: #6BB700;
-    --folder-hover: rgba(79, 107, 237, 0.2);
-    --folder-selected: rgba(79, 107, 237, 0.3);
+  --primary: #0072C6;       /* Outlook blue */
+  --primary-dark: #005D9E;   /* Darker blue */
+  --primary-darker: #004B80; /* Even darker blue */
+  --primary-light: #E5F2FF;  /* Light blue background */
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --white: #fff;
+  --black: #000;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --gray-light: #f8f9fa;
+  --body-bg: #f5f5f5;
+  --body-color: #212529;
+  --link-color: var(--primary);
+  --link-hover-color: var(--primary-dark);
+  --border-color: #dee2e6;
+  --input-bg: #fff;
+  --input-color: #495057;
+  --input-border-color: #ced4da;
+  --input-focus-bg: #fff;
+  --input-focus-color: #495057;
+  --input-focus-border-color: #80bdff;
+  --input-disabled-bg: #e9ecef;
+  --table-bg: transparent;
+  --table-accent-bg: rgba(0, 0, 0, 0.05);
+  --table-hover-bg: rgba(0, 0, 0, 0.075);
+  --table-border-color: #dee2e6;
 }
 
+/* ===== Base Styles ===== */
 body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-    line-height: 1.5;
+  color: var(--body-color);
+  background-color: var(--body-bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
 }
 
-/* Header - Office-like header */
+a {
+  color: var(--link-color);
+}
+a:hover {
+  color: var(--link-hover-color);
+}
+
+/* ===== Header & Navigation ===== */
 #header {
-    background-color: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
-    height: 48px;
-    box-shadow: none;
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#header a, #header span {
-    color: var(--text-primary);
-    font-size: 14px;
+#sogo-nav a {
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  transition: background-color 0.2s;
+}
+#sogo-nav a:hover {
+  background-color: var(--primary-dark);
+}
+#sogo-nav a.active {
+  background-color: var(--primary-darker);
 }
 
-/* Navigation - Left pane like Outlook */
-#navigation {
-    background-color: var(--bg-secondary);
-    border-right: 1px solid var(--border-color);
-    width: 220px;
+/* ===== Buttons ===== */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+.btn-primary:active,
+.btn-primary.active {
+  background-color: var(--primary-darker);
+  border-color: var(--primary-darker);
 }
 
-#navigation a {
-    color: var(--text-secondary);
-    padding: 8px 16px;
-    font-size: 13px;
-    border-radius: 4px;
-    margin: 2px 8px;
-    transition: background-color 0.15s ease;
-}
-
-#navigation a:hover {
-    background-color: var(--folder-hover);
-    color: var(--text-primary);
-}
-
-#navigation .selected a {
-    background-color: var(--folder-selected);
-    color: var(--text-primary);
-    font-weight: 500;
-}
-
-/* Content area - Outlook-style content */
-#content {
-    background-color: var(--bg-primary);
-    padding: 16px;
-}
-
-/* Tables - Outlook message list style */
-table {
-    border-color: var(--border-color);
-    font-size: 14px;
-}
-
-table th {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-    font-weight: 500;
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-table td {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    border-color: var(--border-color);
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-table tr:hover td {
-    background-color: var(--hover-bg);
-}
-
-/* Buttons - Office-style buttons */
-button, .button, input[type="submit"] {
-    background-color: var(--bg-tertiary);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-    border-radius: 2px;
-    padding: 6px 12px;
-    font-size: 13px;
-    transition: all 0.15s ease;
-}
-
-button:hover, .button:hover, input[type="submit"]:hover {
-    background-color: var(--hover-bg);
-    border-color: var(--border-color);
-}
-
-button.primary, .button.primary {
-    background-color: var(--accent-color);
-    color: white;
-    border-color: var(--accent-color);
-}
-
-button.primary:hover, .button.primary:hover {
-    background-color: #5a7af0;
-}
-
-/* Forms - Outlook-style inputs */
-input, textarea, select {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-    padding: 8px 12px;
-    border-radius: 2px;
-    font-size: 14px;
-}
-
-input:focus, textarea:focus, select:focus {
-    border-color: var(--accent-color);
-    outline: none;
-    box-shadow: 0 0 0 1px var(--accent-color);
-}
-
-/* Calendar - Outlook calendar styling */
-.fc-daygrid-day {
-    background-color: var(--bg-primary);
-    border-color: var(--border-color);
-}
-
-.fc-daygrid-day.fc-day-today {
-    background-color: var(--bg-tertiary);
-}
-
+/* ===== Calendar ===== */
 .fc-event {
-    background-color: var(--accent-color);
-    border: none;
-    padding: 2px 4px;
-    font-size: 12px;
+  background-color: var(--primary);
+  border-color: var(--primary-dark);
+}
+.fc-event:hover {
+  background-color: var(--primary-dark);
 }
 
-/* Mail - Outlook message styling */
-.unread {
-    background-color: transparent;
-    font-weight: 600;
-    color: var(--text-primary);
+/* ===== Mail Composition (Force Black Text) ===== */
+#mail-compose textarea,
+#mail-compose .wysihtml5-editor,
+#mail-compose .wysihtml5-editor * {
+  color: #000000 !important;
+}
+#mail-compose .wysihtml5-editor a {
+  color: var(--primary) !important;
 }
 
-.unread .subject {
-    font-weight: 600;
+/* ===== Selected Items ===== */
+.selected {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
 }
 
-/* Scrollbars - Office-style */
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+/* ===== Tabs ===== */
+.nav-tabs .nav-link.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
 }
 
-::-webkit-scrollbar-track {
-    background: var(--bg-secondary);
+/* ===== Progress Bars ===== */
+.progress-bar {
+  background-color: var(--primary);
 }
 
+/* ===== Dropdowns ===== */
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* ===== Datepicker ===== */
+.datepicker table tr td.active.active {
+  background-color: var(--primary);
+}
+
+/* ===== Scrollbars ===== */
 ::-webkit-scrollbar-thumb {
-    background: var(--bg-tertiary);
-    border-radius: 4px;
+  background-color: var(--primary);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--light);
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-color);
-}
-
-/* Toolbar - Outlook-style command bar */
-.toolbar {
-    background-color: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
-    padding: 8px 16px;
-}
-
-/* Message view - Outlook reading pane style */
-.message-view {
-    background-color: var(--bg-primary);
-    border-left: 1px solid var(--border-color);
-    padding: 16px;
-}
-
-/* Responsive adjustments for mobile */
+/* ===== Responsive Adjustments ===== */
 @media (max-width: 768px) {
-    #navigation {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
-    }
-    
-    .message-view {
-        border-left: none;
-        border-top: 1px solid var(--border-color);
-    }
+  #sogo-nav {
+    background-color: var(--primary);
+  }
+  #sogo-nav a {
+    padding: 0.5rem;
+  }
 }
 
-/* Folder list styling similar to Outlook */
-.folder-list {
-    padding: 8px 0;
+/* ===== Additional UI Fixes ===== */
+.card {
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  background-color: var(--white);
+}
+.card-header {
+  background-color: var(--light);
+  border-bottom: 1px solid var(--border-color);
 }
 
-.folder-list li {
-    padding: 4px 16px;
-    margin: 2px 0;
-    border-radius: 4px;
+/* ===== Forms & Inputs ===== */
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 114, 198, 0.25);
 }
 
-.folder-list li:hover {
-    background-color: var(--folder-hover);
+/* ===== Alerts ===== */
+.alert-primary {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary-darker);
 }
 
-.folder-list li.selected {
-    background-color: var(--folder-selected);
+/* ===== Badges ===== */
+.badge-primary {
+  background-color: var(--primary);
+  color: var(--white);
 }
 
-/* Status bar similar to Outlook */
-.status-bar {
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    font-size: 12px;
-    padding: 6px 16px;
+/* ===== Tooltips ===== */
+.tooltip-inner {
+  background-color: var(--primary);
+}
+.tooltip.bs-tooltip-auto[x-placement^="top"] .arrow::before,
+.tooltip.bs-tooltip-top .arrow::before {
+  border-top-color: var(--primary);
 }
