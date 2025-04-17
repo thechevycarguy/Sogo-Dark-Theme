@@ -1,317 +1,75 @@
-/*!
- * SOGo - Complete Outlook Dark Theme
- * Full CSS with all elements styled
- * Version 1.0
- */
-
 :root {
-  /* Outlook Color Scheme */
-  --outlook-blue: #0072C6;
-  --outlook-blue-dark: #005D9E;
-  --outlook-blue-darker: #004B80;
-  --outlook-blue-light: #E5F2FF;
-  
-  /* Dark Grey Palette */
-  --dark-grey-1: #252525;    /* Darkest */
-  --dark-grey-2: #2D2D2D;    /* Middle */
-  --dark-grey-3: #3C3C3C;    /* Lightest */
-  
-  /* UI Assignments */
-  --primary: var(--outlook-blue);
-  --primary-dark: var(--outlook-blue-dark);
-  --primary-darker: var(--outlook-blue-darker);
-  --primary-light: var(--outlook-blue-light);
-  
-  --header-bg: var(--dark-grey-1);
-  --sidebar-bg: var(--dark-grey-1);
-  --body-bg: var(--dark-grey-2);
-  --content-bg: var(--dark-grey-3);
-  
-  --text-main: #FFFFFF;
-  --text-muted: #B0B0B0;
-  
-  --border-color: #4A4A4A;
-  --hover-bg: rgba(255, 255, 255, 0.1);
+  /* Base Colors (Unchanged) */
+  --white: #ffffff;
+  --black: #000000;
+  --gray-1: #f5f5f5;
+  --gray-2: #e6e6e6;
+  --gray-3: #d6d6d6;
+  --gray-4: #c4c4c4;
+  --gray-5: #b0b0b0;
+  --gray-6: #999999;
+  --gray-7: #7f7f7f;
+  --gray-8: #606060;
+  --gray-9: #3d3d3d;
+  --gray-10: #1f1f1f;
+
+  /* Red → Blue Shades */
+  --red-1: #d6e4ff;
+  --red-2: #c2d6ff;
+  --red-3: #acc7ff;
+  --red-4: #96b8ff;
+  --red-5: #80a8ff;
+  --red-6: #6796ff;
+  --red-7: #4982ff;
+  --red-8: #256aff;
+  --red-9: #0055ff;
+  --red-10: #004eed;
+  --red-11: #0044d6;
+  --red-12: #003bc1;
+  --red-13: #0033aa;
+  --red-14: #002990;
+  --red-15: #001f70;
+
+  /* Accent Colors (Now Blue) */
+  --accent-primary: var(--red-8);
+  --accent-primary-hover: var(--red-7);
+  --accent-primary-active: var(--red-9);
+
+  /* Background/Text (Unchanged) */
+  --background-primary: var(--gray-10);
+  --background-secondary: var(--gray-9);
+  --background-tertiary: var(--gray-8);
+  --text-normal: var(--gray-1);
+  --text-muted: var(--gray-4);
+  --text-link: var(--accent-primary);
+  --text-positive: #3dff3d;
+  --text-warning: #ffff3d;
+  --text-danger: #ff3d3d;
+  --text-info: #3dffff;
 }
 
-/* ==================== */
-/* === Core Styles === */
-/* ==================== */
-
-body {
-  color: var(--text-main);
-  background-color: var(--body-bg);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5;
+/* ====================== */
+/* Email Body Customization */
+/* ====================== */
+/* Force black text + white background in compose/message view */
+.email-body, 
+.plain-text, 
+.html-editor, 
+.msg-body, 
+.mce-content-body {
+  color: #000000 !important;
+  background-color: #ffffff !important;
 }
 
-a {
-  color: var(--primary);
-  text-decoration: none;
+/* Fix input fields (if they inherit dark theme) */
+input[type="text"], 
+textarea, 
+.mce-edit-area {
+  color: #000000 !important;
+  background-color: #ffffff !important;
 }
 
-a:hover {
-  color: var(--primary-light);
-}
-
-hr {
-  border-color: var(--border-color);
-}
-
-/* ==================== */
-/* === Header & Nav === */
-/* ==================== */
-
-#header {
-  background-color: var(--header-bg);
-  color: var(--text-main);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-#sogo-nav {
-  background-color: var(--sidebar-bg);
-}
-
-#sogo-nav a {
-  color: var(--text-main) !important;
-  padding: 12px 15px;
-  border-left: 3px solid transparent;
-  transition: all 0.2s;
-}
-
-#sogo-nav a:hover {
-  background-color: var(--hover-bg);
-  border-left-color: var(--primary);
-}
-
-#sogo-nav a.active {
-  background-color: var(--primary);
-  border-left-color: var(--primary-dark);
-}
-
-#sogo-nav .fa {
-  color: var(--text-main);
-  margin-right: 8px;
-}
-
-/* ==================== */
-/* === Main Content === */
-/* ==================== */
-
-#content {
-  background-color: var(--body-bg);
-  padding: 20px;
-}
-
-.panel {
-  background-color: var(--content-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.panel-heading {
-  background-color: var(--primary);
-  color: white;
-  padding: 10px 15px;
-  border-bottom: 1px solid var(--primary-dark);
-}
-
-/* ==================== */
-/* === Mail Module === */
-/* ==================== */
-
-/* Mail List */
-.mail-list {
-  background-color: var(--content-bg);
-}
-
-.mail-list-row {
-  padding: 10px 15px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.mail-list-row:hover {
-  background-color: var(--hover-bg);
-}
-
-.mail-list-row.unread {
-  font-weight: bold;
-}
-
-.mail-list-row.selected {
-  background-color: var(--primary);
-  color: white;
-}
-
-/* Unread Count */
-.unread-count {
-  background-color: var(--primary) !important;
-  color: white !important;
-  padding: 2px 6px;
-  border-radius: 10px;
-  font-size: 0.8em;
-}
-
-/* Message View */
-.message-header {
-  background-color: var(--content-bg);
-  border-bottom: 1px solid var(--border-color);
-  padding: 15px;
-}
-
-.message-body {
-  background-color: var(--dark-grey-1);
-  padding: 20px;
-  color: var(--text-main);
-}
-
-/* Compose Window */
-#mail-compose {
-  background-color: var(--dark-grey-1);
-}
-
-#mail-compose .panel-heading {
-  background-color: var(--primary);
-}
-
-#mail-compose textarea,
-#mail-compose .wysihtml5-editor {
-  background-color: var(--dark-grey-1) !important;
-  color: var(--text-main) !important;
-  border: 1px solid var(--border-color);
-}
-
-/* ==================== */
-/* === Calendar === */
-/* ==================== */
-
-.fc-event {
-  background-color: var(--primary);
-  border-color: var(--primary-dark);
-  color: white;
-}
-
-.fc-event:hover {
-  background-color: var(--primary-dark);
-}
-
-.fc-toolbar {
-  background-color: var(--content-bg);
-  padding: 10px;
-  border-radius: 4px;
-}
-
-/* ==================== */
-/* === Buttons === */
-/* ==================== */
-
-.btn {
-  padding: 6px 12px;
-  border-radius: 4px;
-  transition: all 0.2s;
-}
-
-.btn-primary {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  color: white !important;
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-dark);
-  border-color: var(--primary-dark);
-}
-
-.btn-default {
-  background-color: var(--content-bg);
-  border-color: var(--border-color);
-  color: var(--text-main);
-}
-
-.btn-default:hover {
-  background-color: var(--hover-bg);
-}
-
-/* ==================== */
-/* === Forms === */
-/* ==================== */
-
-.form-control {
-  background-color: var(--dark-grey-1);
-  color: var(--text-main);
-  border: 1px solid var(--border-color);
-}
-
-.form-control:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 0.2rem rgba(0, 114, 198, 0.25);
-}
-
-/* ==================== */
-/* === Tables === */
-/* ==================== */
-
-.table {
-  color: var(--text-main);
-  background-color: var(--content-bg);
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: var(--dark-grey-2);
-}
-
-.table-hover tbody tr:hover {
-  background-color: var(--hover-bg);
-}
-
-/* ==================== */
-/* === Miscellaneous === */
-/* ==================== */
-
-/* Tooltips */
-.tooltip-inner {
-  background-color: var(--primary);
-}
-
-/* Popovers */
-.popover {
-  background-color: var(--content-bg);
-  border-color: var(--border-color);
-}
-
-.popover-header {
-  background-color: var(--primary);
-  color: white;
-}
-
-/* Progress Bars */
-.progress {
-  background-color: var(--dark-grey-1);
-}
-
-.progress-bar {
-  background-color: var(--primary);
-}
-
-/* Alerts */
-.alert {
-  background-color: var(--content-bg);
-  border-color: var(--border-color);
-  color: var(--text-main);
-}
-
-/* ==================== */
-/* === Responsive === */
-/* ==================== */
-
-@media (max-width: 768px) {
-  #sogo-nav {
-    background-color: var(--header-bg);
-  }
-  
-  #content {
-    padding: 10px;
-  }
+/* Fix toolbar buttons (optional) */
+.toolbar {
+  background-color: var(--background-secondary) !important;
 }
