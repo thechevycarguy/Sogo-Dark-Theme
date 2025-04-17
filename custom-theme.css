@@ -218,3 +218,9 @@ main.view.md-default-theme.md-background.md-hue-1.md-bg {
 .sg-compose-body * {
   color: #000000 !important;
 }
+
+
+:root {
+  --ck-color-base-background: #202020;
+  --ck-color-toolbar-background: #2c2c2c;
+}
