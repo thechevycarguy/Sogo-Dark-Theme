@@ -213,3 +213,8 @@ main.view.md-default-theme.md-background.md-hue-1.md-bg {
     background-color: rgb(55 55 55)
 }
 /* End Logo screen */
+/* Fix compose message font color */
+.sg-compose-body,
+.sg-compose-body * {
+  color: #000000 !important;
+}
